@@ -2,9 +2,9 @@
 
 Nice little module that is assisting when creating excel exports from datasets. It takes normal array-of-objects dataset plus a json report specification and builds excel(.xlsx) file. It supports styling and re-formating of the data on the fly. Check the example usage for more information.
 
-### Changes in this fork
+### About this fork
 * Column Width is not mandatory. A default of 60px is set for columns without a 'Width' value
-* Column Style is not mandatory. A default empty style is not assigned to the Column if not style is provided. This will avoid the '[object Object]' cell value issue.
+* Column Style is not mandatory. A default empty style is now assigned to the column if no style is provided. This will avoid the '[object Object]' cell value issue.
 
 ### Usage
 
