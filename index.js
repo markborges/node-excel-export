@@ -2,6 +2,8 @@
 
 const excel = require('./lib/excel')
 
+const defaultStyle = {}
+
 let buildExport = (params, options) => {
   if (!(params instanceof Array)) throw 'buildExport expects an array'
 
@@ -27,10 +29,10 @@ let buildExport = (params, options) => {
     //build the header row
     let header = []
     for (let col in specification) {
-      header.push({
-        value: specification[col].displayName,
-        style: specification[col].headerStyle || ''
-      })
+        header.push({
+            value: specification[col].displayName,
+            style: specification[col].headerStyle || defaultStyle
+        })
 
       if (specification[col].width) {
         if (Number.isInteger(specification[col].width)) {
@@ -41,7 +43,7 @@ let buildExport = (params, options) => {
           throw 'Provide column width as a number'
         }
       } else {
-        config.cols.push({})
+        config.cols.push({ wpx: 60 })
       }
 
     }
