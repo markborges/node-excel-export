@@ -2,10 +2,8 @@
 
 Nice little module that is assisting when creating excel exports from datasets. It takes normal array-of-objects dataset plus a json report specification and builds excel(.xlsx) file. It supports styling and re-formating of the data on the fly. Check the example usage for more information.
 
-### Installation
-```bash
-npm install node-excel-export
-```
+### Changes in this fork
+* Width is not mandatory. A default of 60px is set for columns without a 'Width' value
 
 ### Usage
 
