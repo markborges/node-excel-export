@@ -5,6 +5,7 @@ Nice little module that is assisting when creating excel exports from datasets. 
 ### About this fork
 * Column Width is not mandatory. A default of 60px is set for columns without a 'Width' value
 * Column Style is not mandatory. A default empty style is now assigned to the column if no style is provided. This will avoid the '[object Object]' cell value issue.
+* July 2nd, 2020
 
 ### Usage
 
