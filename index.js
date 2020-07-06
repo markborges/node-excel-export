@@ -52,13 +52,18 @@ let buildExport = (params, options) => {
     dataset.forEach(record => {
       let row = []
       for (let col in specification) {
-        let cell_value = record[col]
+        let cell_value = record[col].value || record[col];
 
         if (specification[col].cellFormat && typeof specification[col].cellFormat == 'function') {
           cell_value = specification[col].cellFormat(record[col], record)
         }
 
-        if (specification[col].cellStyle && typeof specification[col].cellStyle == 'function') {
+        if (record[col].cellStyle) {
+          cell_value = {
+            value: cell_value,
+            style: record[col].cellStyle
+          }
+        } else if (specification[col].cellStyle && typeof specification[col].cellStyle == 'function') {
           cell_value = {
             value: cell_value,
             style: specification[col].cellStyle(record[col], record)
